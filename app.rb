@@ -7,8 +7,25 @@ def addAll(*nums)
   nums.each do |num|
     total = total + num
   end
-  
+
   return total
 end
 
-puts addAll(2,5,6,7)
+# // Seek and Destroy
+# // remove from the array whatever is in the folling arguments return the leftovers in an array
+# // ex seekAndDestroy([2,3,4,6,6 'hello'], 2,6) == [3,4 'hello']
+def seekAndDestroy(arr, *args)
+
+  items = args
+  final = []
+
+  arr.each do |ele|
+    if !items.include?(ele)
+      final.push(ele)
+    end
+  end
+  return final
+  
+end
+
+puts seekAndDestroy([2,3,4,6,6, 'hello'], 2,6)
