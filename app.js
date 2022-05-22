@@ -71,6 +71,7 @@ function missingLetters(str){
 // Return: integer — the missing number in the array
 
 function missingNum(arr){
+
   let sortedArr = arr.sort((a, b) => a - b)
   for(let i = 0 ; i < sortedArr.length; i++){
     if( sortedArr[i + 1] - sortedArr[i]  !== 1){
@@ -78,4 +79,31 @@ function missingNum(arr){
     }
   }
 }
-console.log(missingNum([1,2,3,4,5,6,7,8,10]))
+
+// Find a duplicate number in an array of integers
+// Return: integer — the duplicate number
+// Assumptions: if no duplicate is found, return false;
+function dupNum(arr){
+  let hashMap = {}
+  for(let i = 0; i < arr.length; i++){
+    if(!hashMap[arr[i]]){
+      hashMap[arr[i]] = 0
+    }
+     hashMap[arr[i]]++
+  }
+
+  let hashVals = Object.values(hashMap);
+
+  const isOne = (currentValue) => currentValue === 1;
+
+  if( hashVals.every(isOne)  ){
+      return false;
+    }
+
+  for(let i in hashMap){
+    if(hashMap[i] === 2){
+      return i;
+    }
+   }
+  }
+console.log(dupNum([1,2,3,4,5,6,7,8,10]))
