@@ -131,4 +131,23 @@ function cumulativeSum(arr){
   
   return result;
 }
-console.log(cumulativeSum([1,3,5,7]))
+
+// Find all duplicate numbers in an array with multiple duplicates
+// Return: array — containing all duplicates found or empty array if none are found
+function allDuplicate(arr){
+  let hashMap = {}
+  for(let i = 0; i < arr.length; i++){
+    if(!hashMap[arr[i]]){
+      hashMap[arr[i]] = 0
+    }
+    hashMap[arr[i]]++
+  }
+  let final = []
+  for(let i in hashMap){
+    if(hashMap[i] > 1){
+      final.push(parseInt(i))
+    }
+  }
+  console.log(final)
+}
+console.log(allDuplicate([1,1,2,3,4,5,6,7,8,6,6,7,7,7,10,10]))
