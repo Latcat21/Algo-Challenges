@@ -118,5 +118,17 @@ function largestAndSmallest(arr){
   return returnObj;
 }
 
+// Return an array showing the cumulative sum at each index of an array of integers
 
-console.log(largestAndSmallest([1,2,3,4,100]))
+// Return: array — integers showing the cumulative sum at each index
+
+function cumulativeSum(arr){
+  let result = [arr[0]];
+  
+  for(let i = 1; i < arr.length; i++) {
+    result.push(arr[i] + result[i-1]);
+  } 
+  
+  return result;
+}
+console.log(cumulativeSum([1,3,5,7]))
