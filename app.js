@@ -143,11 +143,31 @@ function allDuplicate(arr){
     hashMap[arr[i]]++
   }
   let final = []
+
   for(let i in hashMap){
     if(hashMap[i] > 1){
       final.push(parseInt(i))
     }
   }
-  console.log(final)
+  return final
 }
-console.log(allDuplicate([1,1,2,3,4,5,6,7,8,6,6,7,7,7,10,10]))
+
+// Remove all duplicates from an array of integers
+// Return: array — without any duplicates
+function removeAllDuplicates(arr){
+  let hashMap = {}
+  for(let i = 0; i < arr.length; i++){
+    if(!hashMap[arr[i]]){
+      hashMap[arr[i]] = 0
+    }
+    hashMap[arr[i]]++
+  }
+  let final = []
+
+  for(let i in hashMap){
+   final.push(parseInt(i))
+  }
+  return final
+}
+
+console.log(removeAllDuplicates([1,1,1,1,1]))
