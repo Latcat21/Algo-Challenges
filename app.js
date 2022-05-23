@@ -106,4 +106,17 @@ function dupNum(arr){
     }
    }
   }
-console.log(dupNum([1,2,3,4,5,6,7,8,10]))
+
+//   Find the largest and smallest number in an unsorted array of integers
+// Return: object — containing value of min and max
+function largestAndSmallest(arr){
+  let returnObj = {}
+
+  returnObj['smallest'] = Math.min(...arr);
+  returnObj['largest'] = Math.max(...arr);
+
+  return returnObj;
+}
+
+
+console.log(largestAndSmallest([1,2,3,4,100]))
