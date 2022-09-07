@@ -28,4 +28,14 @@ def seekAndDestroy(arr, *args)
   
 end
 
-puts seekAndDestroy([2,3,4,6,6, 'hello'], 2,6)
+#Numbers greater than 5
+# This problem involves finding the number of integers with a value greater than 5. In Ruby speak, you could put it like this: Given an array, count how many items are greater than 5.
+
+def greater_than_five(arr)
+  new_arr = arr.select do |ele|
+   ele >= 5
+  end
+  
+end
+
+puts greater_than_five([17, 7, 3, 6, 10, 1])
