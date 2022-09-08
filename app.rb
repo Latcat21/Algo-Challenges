@@ -38,4 +38,17 @@ def greater_than_five(arr)
   
 end
 
-puts greater_than_five([17, 7, 3, 6, 10, 1])
+# // Odd counter
+# // count the number of odd numbers in an Array
+# // [1,2,3,4,5,6,7,8,9] => 6
+def odd_counter arr
+  count = 0
+  arr.each do |ele|
+    if ele % 2 == 1
+      count += 1
+    end
+  end
+  return count
+end
+
+puts odd_counter([1,1,3,4,5,6,7,8,9])
