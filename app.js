@@ -193,4 +193,17 @@ function same(arr1, arr2){
  }
  return true
 }
-console.log(same([1,2,3,], [1,4, 9]))
+
+// Odd counter
+// count the number of odd numbers in an Array
+// [1,2,3,4,5,6,7,8,9] => 6
+function oddCounter(arr){
+  let count = 0;
+  arr.forEach((ele) => {
+    if(ele % 2 === 1){
+      count++
+    }
+  })
+  return count
+}
+console.log(oddCounter([1,2,3,4,5,6,7,8,9]))
